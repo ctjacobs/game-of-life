@@ -29,7 +29,7 @@ old_grid = numpy.zeros(N*N, dtype='i').reshape(N,N)
 new_grid = numpy.zeros(N*N, dtype='i').reshape(N,N)
 
 def seed(grid):
-   ''' Set up a random initial configuration for the grid. '''
+   """ Set up a random initial configuration for the grid. """
    for i in range(0, N):
       for j in range(0, N):
          if(random.randint(0, 100) < 15):
@@ -38,7 +38,7 @@ def seed(grid):
             grid[i][j] = 0
          
 def live_neighbours(grid, i, j):
-   ''' Count the number of live neighbours around point (i, j). '''
+   """ Count the number of live neighbours around point (i, j). """
    s = 0 # The total number of live neighbours.
    # Loop over all the neighbours.
    for x in [i-1, i, i+1]:
@@ -61,7 +61,7 @@ def live_neighbours(grid, i, j):
 seed(old_grid)
 pylab.pcolormesh(old_grid)
 pylab.colorbar()
-pylab.savefig('generation0.png')
+pylab.savefig("generation0.png")
 
 t = 1; T = 200 # Time-stepping parameters.
 write_frequency = 5 # How frequently we want to output a grid configuration.
@@ -83,7 +83,7 @@ while t <= T: # Evolve!
    # Output the new configuration.
    if(t % write_frequency == 0):
       pylab.pcolormesh(new_grid)
-      pylab.savefig('generation%d.png' % t)
+      pylab.savefig("generation%d.png" % t)
 
    # The new configuration becomes the old configuration for the next generation.
    old_grid = new_grid.copy()
