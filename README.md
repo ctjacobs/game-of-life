@@ -16,5 +16,5 @@
 Game of Life
 ============
 
-An implementation of Conway's Game of Life in Python.
+An implementation of Conway's Game of Life in Python, used in a programming class for demonstration purposes.
 
